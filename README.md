@@ -3,7 +3,7 @@
 Crear una base de datos para administrar los animales de una granja, donde se registren datos clave
 como especie, edad, sexo, peso, número de identificación, estado de salud.
 🐑 Animales en la Granja:
-Vacas 
+Vacas 🐄
 Ovejas 🐑
 Corderos (crías de oveja) 🐑🐣
 Gallos 🐓
