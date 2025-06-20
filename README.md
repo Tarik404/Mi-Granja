@@ -211,7 +211,11 @@ WHERE EXTRACT(YEAR FROM fecha_ingreso) = 2025;
 ```
 # 📸 Evidencia Visual del Proyecto en Airtable
 A continuación se presenta una serie de pantallazos que documentan visualmente la configuración actual del proyecto en Airtable. Estas capturas sirven como respaldo gráfico de las estructuras descritas previamente y ayudan a comprender de forma rápida la organización y funcionamiento de la base de datos.
-
-![Imagen JSONB](Captura%20de%20pantalla%202025-06-20%20090426.png)
-
+![Imagen JSONB](captura1.png)
+![Imagen JSONB](captura2.png)
+![Imagen JSONB](captura3.png)
+![Imagen JSONB](captura4.png)
+![Imagen JSONB](captura5.png)
+![Imagen JSONB](captura6.png)
+![Imagen JSONB](captura7.png)
 
