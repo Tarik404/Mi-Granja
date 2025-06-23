@@ -211,13 +211,19 @@ WHERE EXTRACT(YEAR FROM fecha_ingreso) = 2025;
 ```
 # 📸 Evidencia Visual del Proyecto en Airtable
 A continuación se presenta una serie de pantallazos que documentan visualmente la configuración actual del proyecto en Airtable. Estas capturas sirven como respaldo gráfico de las estructuras descritas previamente y ayudan a comprender de forma rápida la organización y funcionamiento de la base de datos.
+# el inicio
 ![Imagen JSONB](./captura1.png)
+#  automatizacion de trigger
 ![Imagen JSONB](captura2.png)
+# interface
 ![Imagen JSONB](captura3.png)
+# datos de granja 
 ![Imagen JSONB](captura4.png)
 ![Imagen JSONB](captura5.png)
+# automatizacion de registro
 ![Imagen JSONB](captura6.png)
 ![Imagen JSONB](captura7.png)
+# Registro de clientes
 ![Imagen JSONB](captura0.png)
 # 🗃️ 1. Relación entre tablas
 ```
