@@ -218,5 +218,64 @@ A continuación se presenta una serie de pantallazos que documentan visualmente 
 ![Imagen JSONB](captura5.png)
 ![Imagen JSONB](captura6.png)
 ![Imagen JSONB](captura7.png)
+# 🗃️ 1. Relación entre tablas
+```
+## 🧩 Relación entre tablas (Modelo Entidad-Relación)
+
+- `animales` ➝ tabla principal con la información de cada animal
+- `inventario` ➝ almacena el stock actual por tipo de animal
+- `ventas` ➝ registro de ventas realizadas
+- `precios` ➝ precios históricos de cada tipo de animal
+- `envios` ➝ control de entregas al cliente
+- `comentarios_clientes` ➝ opiniones recibidas por cada venta
+- `promociones` ➝ descuentos activos según especie o temporada
+```
+# 📦 2. Scripts incluidos
+```
+## ⚙️ Scripts incluidos
+
+- `datos_granja.sql`: Inserta los datos de los 100 animales
+- `dump_granja.sql`: Exportación completa de la base de datos
+- `views.sql`: Contiene las vistas creadas en PostgreSQL para consultas avanzadas
+- `airtable_export.csv`: Exportación para cargar datos en Airtable
+```
+⏱️ 3. Automatizaciones programadas
+```
+## ⏱️ Automatizaciones
+
+Se creó una automatización en Airtable que:
+
+- Se ejecuta cada día a las 08:00
+- Revisa la cantidad disponible
+- Activa promociones si hay exceso de stock
+- Envía notificación en caso de inventario bajo
+```
+# 📊 4. Ejemplo de consulta SQL usada
+```
+## 🔍 Ejemplo de consulta SQL
+
+```sql
+-- Obtener animales con menos de 2 unidades disponibles
+SELECT a.nombre, i.cantidad_disponible
+FROM animales a
+JOIN inventario i ON a.id = i.animal_id
+WHERE i.cantidad_disponible < 2;
+```
+---
+
+## 🧾 Conclusión
+
+Este proyecto fue una excelente oportunidad para aplicar conocimientos de bases de datos, automatización y visualización de información. A través de la simulación de una granja, logré construir un sistema completo que incluye la gestión de animales, inventario, precios, ventas y más, utilizando herramientas reales del mundo profesional como MariaDB, PostgreSQL, DBeaver y Airtable.
+
+Este trabajo no solo refleja habilidades técnicas, sino también organización, planificación y visión de proyecto. Estoy orgulloso del resultado y abierto a seguir mejorándolo en el futuro.
+
+Gracias por visitar este repositorio 🐄✨
+
+---
+
+
+
+
+
 
 
