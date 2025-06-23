@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="mi-granja-inteligente">Mi Granja Inteligente</h1>
+<p>✅ Objetivo del Proyecto:
+Crear una base de datos para administrar los animales de una granja, donde se registren datos clave
+como especie, edad, sexo, peso, número de identificación, estado de salud.
+🐑 Animales en la Granja:
+Vacas 🐄
+Ovejas 🐑
+Corderos (crías de oveja) 🐑🐣
+Gallos 🐓
+Gallinas 🐔
+Toros 🐃
+Conejos 🐇
+Pavos 🦃
+Cabras 🐐</p>
+<h1 id="%F0%9F%93%81-estructura-del-repositorio%C3%A7">📁 Estructura del Repositorioç</h1>
+<pre class="hljs"><code><div>granja-digital/
+│
+├── README.md
+├── datos/
+│   └── datos_granja.sql
+│
+├── sql/
+│   ├── crear_base_de_datos.sql
+│   └── consultas_utiles.sql
+│
+├── imagenes/
+│   └── diagrama_base_datos.png (opcional)
+│
+└── presentacion/
+    └── presentacion_granja.pdf (o PowerPoint, si usas)
+</div></code></pre>
+<h1 id="%F0%9F%93%9D-contenido-del-readmemd">📝 Contenido del README.md</h1>
+<pre class="hljs"><code><div># 🐄 Proyecto Escolar: Granja Digital
+
+Este proyecto simula la administración de una **granja digital** con diferentes tipos de animales, utilizando una base de datos creada con **MariaDB/MySQL**.
+
+---
+
+## 📌 Objetivos del Proyecto
+
+- Simular la gestión de animales en una granja.
+- Utilizar SQL para organizar y consultar datos.
+- Practicar el uso de bases de datos relacionales.
+- Presentar resultados de forma clara y ordenada.
+
+---
+
+## 🐑 Animales Incluidos
+
+- Vacas 🐄
+- Toros 🐃
+- Ovejas 🐑
+- Corderos 🐑🐣
+- Gallinas 🐔
+- Gallos 🐓
+- Conejos 🐇
+- Pavos 🦃
+- Cabras 🐐
+
+---
+
+## 🧱 Estructura de la Base de Datos
+
+```sql
+CREATE TABLE animales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    tipo_animal VARCHAR(30),
+    sexo CHAR(1),
+    edad INT,
+    peso DECIMAL(6,2),
+    estado_salud VARCHAR(30),
+    fecha_ingreso DATE,
+    observaciones TEXT
+);
+</div></code></pre>
+<h1 id="%F0%9F%92%BE-datos-simulados">💾 Datos Simulados</h1>
+<pre class="hljs"><code><div>mysql -u root -p granja &lt; datos/datos_granja.sql
+</div></code></pre>
+<h1 id="%F0%9F%94%8D-consultas-%C3%BAtiles">🔍 Consultas Útiles</h1>
+<pre class="hljs"><code><div>-- Ver todos los animales
+SELECT * FROM animales;
+
+-- Contar animales por tipo
+SELECT tipo_animal, COUNT(*) FROM animales GROUP BY tipo_animal;
+
+-- Ver animales enfermos
+SELECT * FROM animales WHERE estado_salud = 'Enferma';
+</div></code></pre>
+<h1 id="%F0%9F%9A%80-c%C3%B3mo-ejecutar-el-proyecto">🚀 Cómo Ejecutar el Proyecto</h1>
+<p>Clona el repositorio:</p>
+<pre class="hljs"><code><div>git clone https://github.com/ademo/granja-digital.git
+cd granja-digital
+</div></code></pre>
+<p>Entra a MySQL y crea la base de datos:</p>
+<pre class="hljs"><code><div>SOURCE sql/crear_base_de_datos.sql;
+</div></code></pre>
+<p>Importa los datos:</p>
+<pre class="hljs"><code><div>SOURCE datos/datos_granja.sql;
+</div></code></pre>
+<h1 id="%E2%9C%8D%EF%B8%8F-autor">✍️ Autor</h1>
+<p>Tarik - Proyecto escolar realizado con fines educativos y de aprendizaje de bases de datos.</p>
+<pre class="hljs"><code><div>
+---
+
+## ✅ Archivos a Subir
+
+### 1. `crear_base_de_datos.sql`
+```sql
+CREATE DATABASE granja;
+USE granja;
+
+CREATE TABLE animales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    tipo_animal VARCHAR(30),
+    sexo CHAR(1),
+    edad INT,
+    peso DECIMAL(6,2),
+    estado_salud VARCHAR(30),
+    fecha_ingreso DATE,
+    observaciones TEXT
+);
+</div></code></pre>
+<p>consultas_utiles.sql</p>
+<pre class="hljs"><code><div>SELECT * FROM animales;
+SELECT tipo_animal, COUNT(*) FROM animales GROUP BY tipo_animal;
+SELECT * FROM animales WHERE estado_salud = 'Enferma';
+SELECT tipo_animal, AVG(peso) FROM animales GROUP BY tipo_animal;
+</div></code></pre>
+<h1 id="%F0%9F%93%84-documentaci%C3%B3n-de-vistas">📄 Documentación de Vistas</h1>
+<p>🔹 1. vista_animales_enfermos</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_animales_enfermos AS
+SELECT *
+FROM animales
+WHERE estado_salud = 'Enferma';
+</div></code></pre>
+<p>🔹 2. vista_animales_hembra</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_animales_hembra AS
+SELECT *
+FROM animales
+WHERE sexo = 'H';
+</div></code></pre>
+<p>🔹 3. vista_animales_mayores5</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_animales_mayores5 AS
+SELECT *
+FROM animales
+WHERE edad &gt; 5;
+</div></code></pre>
+<p>🔹 4. vista_animales_saludables</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_animales_saludables AS
+SELECT *
+FROM animales
+WHERE estado_salud = 'Saludable';
+</div></code></pre>
+<p>🔹 5. vista_animales_sin_imagen</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_animales_sin_imagen AS
+SELECT *
+FROM animales
+WHERE imagen IS NULL;
+</div></code></pre>
+<p>🔹 6. vista_aves_con_problemas</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_aves_con_problemas AS
+SELECT *
+FROM animales
+WHERE tipo_animal IN ('Gallina', 'Gallo') AND estado_salud &lt;&gt; 'Saludable';
+</div></code></pre>
+<p>🔹 7. vista_bovinos_antiguos</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_bovinos_antiguos AS
+SELECT *
+FROM animales
+WHERE tipo_animal IN ('Toro', 'Vaca') AND fecha_ingreso &lt; '2024-01-01';
+</div></code></pre>
+<p>🔹 8. vista_cabras</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_cabras AS
+SELECT *
+FROM animales
+WHERE tipo_animal = 'Cabra';
+</div></code></pre>
+<p>🔹 9. vista_conejos_jovenes_saludables</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_conejos_jovenes_saludables AS
+SELECT *
+FROM animales
+WHERE tipo_animal = 'Conejo' AND edad &lt; 5 AND estado_salud = 'Saludable';
+</div></code></pre>
+<p>🔹 10. vista_ingresados_2025</p>
+<pre class="hljs"><code><div>CREATE OR REPLACE VIEW vista_ingresados_2025 AS
+SELECT *
+FROM animales
+WHERE EXTRACT(YEAR FROM fecha_ingreso) = 2025;
+</div></code></pre>
+<h1 id="%F0%9F%93%B8-evidencia-visual-del-proyecto-en-airtable">📸 Evidencia Visual del Proyecto en Airtable</h1>
+<p>A continuación se presenta una serie de pantallazos que documentan visualmente la configuración actual del proyecto en Airtable. Estas capturas sirven como respaldo gráfico de las estructuras descritas previamente y ayudan a comprender de forma rápida la organización y funcionamiento de la base de datos.
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura1.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura2.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura3.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura4.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura5.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura6.png" alt="Imagen JSONB">
+<img src="file:///c:/Usuarios/TuUsuario/Documentos/proyecto/granja/Mi-Granja/Mi-Granja/captura7.png" alt="Imagen JSONB"></p>
+<h1 id="%F0%9F%97%83%EF%B8%8F-1-relaci%C3%B3n-entre-tablas">🗃️ 1. Relación entre tablas</h1>
+<pre class="hljs"><code><div>## 🧩 Relación entre tablas (Modelo Entidad-Relación)
+
+- `animales` ➝ tabla principal con la información de cada animal
+- `inventario` ➝ almacena el stock actual por tipo de animal
+- `ventas` ➝ registro de ventas realizadas
+- `precios` ➝ precios históricos de cada tipo de animal
+- `envios` ➝ control de entregas al cliente
+- `comentarios_clientes` ➝ opiniones recibidas por cada venta
+- `promociones` ➝ descuentos activos según especie o temporada
+</div></code></pre>
+<h1 id="%F0%9F%93%A6-2-scripts-incluidos">📦 2. Scripts incluidos</h1>
+<pre class="hljs"><code><div>## ⚙️ Scripts incluidos
+
+- `datos_granja.sql`: Inserta los datos de los 100 animales
+- `dump_granja.sql`: Exportación completa de la base de datos
+- `views.sql`: Contiene las vistas creadas en PostgreSQL para consultas avanzadas
+- `airtable_export.csv`: Exportación para cargar datos en Airtable
+</div></code></pre>
+<p>⏱️ 3. Automatizaciones programadas</p>
+<pre class="hljs"><code><div>## ⏱️ Automatizaciones
+
+Se creó una automatización en Airtable que:
+
+- Se ejecuta cada día a las 08:00
+- Revisa la cantidad disponible
+- Activa promociones si hay exceso de stock
+- Envía notificación en caso de inventario bajo
+</div></code></pre>
+<h1 id="%F0%9F%93%8A-4-ejemplo-de-consulta-sql-usada">📊 4. Ejemplo de consulta SQL usada</h1>
+<pre class="hljs"><code><div>## 🔍 Ejemplo de consulta SQL
+
+```sql
+-- Obtener animales con menos de 2 unidades disponibles
+SELECT a.nombre, i.cantidad_disponible
+FROM animales a
+JOIN inventario i ON a.id = i.animal_id
+WHERE i.cantidad_disponible &lt; 2;
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%A7%BE-conclusi%C3%B3n">🧾 Conclusión</h2>
+<p>Este proyecto fue una excelente oportunidad para aplicar conocimientos de bases de datos, automatización y visualización de información. A través de la simulación de una granja, logré construir un sistema completo que incluye la gestión de animales, inventario, precios, ventas y más, utilizando herramientas reales del mundo profesional como MariaDB, PostgreSQL, DBeaver y Airtable.</p>
+<p>Este trabajo no solo refleja habilidades técnicas, sino también organización, planificación y visión de proyecto. Estoy orgulloso del resultado y abierto a seguir mejorándolo en el futuro.</p>
+<p>Gracias por visitar este repositorio 🐄✨</p>
+<hr>
+
+</body>
+</html>
