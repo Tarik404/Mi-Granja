@@ -218,6 +218,7 @@ A continuación se presenta una serie de pantallazos que documentan visualmente 
 ![Imagen JSONB](captura5.png)
 ![Imagen JSONB](captura6.png)
 ![Imagen JSONB](captura7.png)
+![Imagen JSONB](captura0.png)
 # 🗃️ 1. Relación entre tablas
 ```
 ## 🧩 Relación entre tablas (Modelo Entidad-Relación)
